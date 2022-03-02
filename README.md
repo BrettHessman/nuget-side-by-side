@@ -13,13 +13,17 @@ If you use this technique you will be breaking the dependancies chain that is au
 3) Install the 2 different versions of your problem assembly in those 2 proxy assemblies.  
 4) Mark your problem assemblies as private=All in package management.  Make sure they are not included in other areas of your code.
 5) Give your problem assemblies descriptive Aliases in package to prevent confusion later on.  In the sample project they are RMQ5 and RMQ6.
-6) Make your proxy assemblies build as exe's instead of DLL's in csproj.  In dotnet core the DLL's will still be created.  You will have to add dummy Main() functions.
+6) Make your proxy assemblies build as exe's instead of DLL's in csproj.  In dotnet core the DLL's will still be created.  You will have to add dummy Main() functions.  If you are still using framework then the exe's themselves can be loaded as if they were DLL's.
 7) Utilize your Package Alias ie 'extern alias RMQ5;' and 'using RMQ5::Asm.Type'.  
-8) Add post build step in csproj that copies problem assemblies from bin/debug up to a folder under the project.  
-9) Add a post build step in csproj that deletes the problem assemblies from bin/debug.  
-10) Mark those problem assemblies (which are transient) as CopyIfNewer in their folder.  
+8) Add post build step in both proxy assembly's csproj that copies problem assemblies from bin/debug up to a folder under the project.  
+9) Add a post build step in both proxy assembly's csproj that deletes the problem assemblies from bin/debug.  
+10) Mark those problem assemblies (which are transient and should appear in solution explorer after build) as CopyIfNewer in their folder.  
 11) Add AppDomain.AssemblyResolve Event to the main program.  
 12) 'Assembly.LoadFile(sting path)' the correct assemblies when requested by the runtime in AssemblyResolve.  
 13) Build a factory or other absractions to determine the version you need and when.  
 14) Profit.  
+
+# Notes:
+RabbitMQ version 5 and version 6 are the pretend 'Problem Assemblies' they do nothing in the code.  
+Don't be confused by the Client10 or Client20 naming.  I didn't know the version or assembly I was going to use when making the project.  Client10 is Rabbit5 Client20 is Rabbit6.  
 
