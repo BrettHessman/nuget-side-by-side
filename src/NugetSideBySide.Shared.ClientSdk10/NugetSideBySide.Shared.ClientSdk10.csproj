@@ -1,0 +1,20 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>netcoreapp3.1</TargetFramework>
+		<OutputType>Exe</OutputType>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Autofac" Version="6.3.0" />
+		<PackageReference Include="RabbitMQ.Client" Version="5.2.0">
+			<PrivateAssets>All</PrivateAssets>
+			<Aliases>RMQ5</Aliases>
+		</PackageReference>
+	</ItemGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\NugetSideBySide.Shared\NugetSideBySide.Shared.csproj" />
+	</ItemGroup>
+
+</Project>

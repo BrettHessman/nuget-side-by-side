@@ -1,0 +1,18 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Autofac" Version="6.3.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\NugetSideBySide.Shared.ClientSdk10\NugetSideBySide.Shared.ClientSdk10.csproj" />
+    <ProjectReference Include="..\NugetSideBySide.Shared.ClientSdk20\NugetSideBySide.Shared.ClientSdk20.csproj" />
+    <ProjectReference Include="..\NugetSideBySide.Shared\NugetSideBySide.Shared.csproj" />
+  </ItemGroup>
+
+</Project>
