@@ -13,7 +13,7 @@ If you use this technique you will be breaking the dependancies chain that is au
 3) Install the 2 different versions of your problem assembly in those 2 proxy assemblies.  
 4) Mark your problem assemblies as private=All in package management.  
 5) Give your problem assemblies descriptive Aliases in package to prevent confusion later on.  
-6) Make your proxy assemblies build as exe's instead of DLL's by utilizing.  
+6) Make your proxy assemblies build as exe's instead of DLL's.  
 7) Utilize your Package Alias via 'extern alias MyAlias;' and 'using MyAlias::Asm.Type'.  
 8) Add post build step that copies problem assemblies from bin/debug up to a folder under the project.  
 9) Add a post build step that deletes the problem assemblies from bin/debug.  

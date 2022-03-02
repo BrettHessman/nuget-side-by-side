@@ -348,3 +348,5 @@ MigrationBackup/
 
 # Ionide (cross platform F# VS Code tools) working folder
 .ionide/
+/src/NugetSideBySide.Shared.ClientSdk10/ClientSdk10/RabbitMQ.Client.dll
+/src/NugetSideBySide.Shared.ClientSdk20/ClientSdk20/RabbitMQ.Client.dll

@@ -1,4 +1,6 @@
 ﻿using Autofac;
+using NugetSideBySide.Shared.Impl;
+using NugetSideBySide.Shared.Services;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -9,6 +11,14 @@ namespace NugetSideBySide.Shared
 	{
 		public static void Register(ContainerBuilder containerBuilder)
 		{
+			containerBuilder.RegisterType<TypicalService>()
+				.As<ITypicalServiceAbstraction>()
+				.SingleInstance();
+
+			containerBuilder.RegisterType(typeof(SimpleVersionedServiceFactory<>))
+				.As(typeof(IVersionedServiceFactory<>))
+				.SingleInstance();
+
 
 		}
 	}

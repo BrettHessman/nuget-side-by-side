@@ -1,4 +1,6 @@
 ﻿using Autofac;
+using NugetSideBySide.Shared.ClientSdk20.Impl;
+using NugetSideBySide.Shared.Services;
 using System;
 
 namespace NugetSideBySide.Shared.ClientSdk20
@@ -7,6 +9,9 @@ namespace NugetSideBySide.Shared.ClientSdk20
 	{
 		public static void Register(ContainerBuilder containerBuilder)
 		{
+			containerBuilder.RegisterType<VersionedService20>()
+				.As<IVersionedServiceAbstraction>()
+				.SingleInstance();
 
 		}
 

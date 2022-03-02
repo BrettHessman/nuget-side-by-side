@@ -17,4 +17,14 @@
 		<ProjectReference Include="..\NugetSideBySide.Shared\NugetSideBySide.Shared.csproj" />
 	</ItemGroup>
 
+	<ItemGroup>
+	  <None Update="ClientSdk10\RabbitMQ.Client.dll">
+	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </None>
+	</ItemGroup>
+
+	<Target Name="PostBuild" AfterTargets="PostBuildEvent">
+	  <Exec Command="xcopy &quot;$(TargetDir)RabbitMQ.Client.dll&quot; &quot;$(ProjectDir)\ClientSdk10&quot; /Y&#xD;&#xA;del &quot;$(TargetDir)RabbitMQ.Client.dll&quot;" />
+	</Target>
+
 </Project>
