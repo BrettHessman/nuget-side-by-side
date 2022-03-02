@@ -15,7 +15,7 @@ namespace NugetSideBySide.Shared
 				.As<ITypicalServiceAbstraction>()
 				.SingleInstance();
 
-			containerBuilder.RegisterType(typeof(SimpleVersionedServiceFactory<>))
+			containerBuilder.RegisterGeneric(typeof(SimpleVersionedServiceFactory<>))
 				.As(typeof(IVersionedServiceFactory<>))
 				.SingleInstance();
 

@@ -7,8 +7,8 @@ namespace NugetSideBySide.Shared.ClientSdk10.Services
 {
 	public interface ISpecifyVersion10 : IVersionedService
 	{
-		Version IVersionedService.StrictlyLessThen => new Version(0, 0);
-		Version IVersionedService.GreaterThenOrEqualTo => new Version(5, 0);
+		Version IVersionedService.StrictlyLessThen => new Version(5, 0);
+		Version IVersionedService.GreaterThenOrEqualTo => new Version(0, 0);
 
 	}
 }
