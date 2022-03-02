@@ -23,3 +23,7 @@ If you use this technique you will be breaking the dependancies chain that is au
 13) Build a factory or other absractions to determine the version you need and when.  
 14) Profit.  
 
+# Notes:
+RabbitMQ version 5 and version 6 are the pretend 'Problem Assemblies' they do nothing in the code.  
+Don't be confused by the Client10 or Client20 naming.  I didn't know the version or assembly I was going to use when making the project.  Client10 is Rabbit5 Client20 is Rabbit6.  
+
